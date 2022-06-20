@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,19 @@
   to {
     transform: rotate(360deg);
   }
+} */
+body {
+  background: #fff;
+}
+
+.todo-wrap{
+  width: 506px;
+  margin: 0 auto;
+}
+
+.todo-container{
+  width: 540px;
+  margin: 10px auto 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

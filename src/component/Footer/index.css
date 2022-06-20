@@ -1,0 +1,14 @@
+.todo-Footer {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+  }
+.todo-Footer button{
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.todo-Footer label{
+    cursor: pointer;
+}

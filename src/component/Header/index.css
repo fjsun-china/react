@@ -1,0 +1,7 @@
+.todo-header  input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    height: 23px;
+    margin-top: 15px;
+}

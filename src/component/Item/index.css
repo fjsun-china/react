@@ -1,0 +1,24 @@
+.todo-Item{
+    border-radius: 5px;
+    width: 504px;
+    height: 30px;
+}
+li {
+    list-style: none;
+}
+
+li label {
+    float: left;
+    cursor: pointer;
+  }
+.todo-Item label input{
+    vertical-align: middle;
+    margin-right: 6px;
+    position: relative;
+    top: 1px;
+}
+li button {
+    float: right;
+    display: none;
+    margin-top: 3px;
+  }
