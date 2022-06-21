@@ -1,14 +1,16 @@
 .todo-Item{
-    border-radius: 5px;
     width: 504px;
     height: 30px;
 }
 li {
     list-style: none;
+    border: 1px solid #ccc;
+    position: relative;
+    margin: 0 0 -1px 0;
 }
 
 li label {
-    float: left;
+    /* float: left; */
     cursor: pointer;
   }
 .todo-Item label input{

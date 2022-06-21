@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import './index.css'
 export default class Item extends Component {
   render() {
-    return (
-      <div className='todo-Item'>
+    const {item} = this.props;
+    return (    
         <li>
-          <label>
-            <input type="checkbox"></input>
-            <span>xxxxxx</span>
-          </label>
-          <button>删除</button>
+            <label>
+              <input type="checkbox"></input>
+              <span>{item.name}</span>
+            </label>
+            <button>删除</button>
         </li>
-      </div>
     )
   }
 }
