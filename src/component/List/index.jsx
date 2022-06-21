@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Item from '../Item'
 import './index.css'
 export default class List extends Component {
+  static propTypes = {
+    changeTodoChecked:PropTypes.func.isRequired,
+    todos:PropTypes.array.isRequired,
+  }
   render() {
-    console.log(this)
-    const {todos} = this.props;
+    const {todos,deleteTodo,changeTodoChecked} = this.props;
     return (
       <div className='todo-List'>
           <ul>
             {
               todos.map((todo)=>{                 
-                return <Item item={todo} key={todo.id}/>               
+                return <Item item={todo} key={todo.id} changeTodoChecked = {changeTodoChecked} deleteTodo={deleteTodo}/>               
               })
             }
           </ul>
