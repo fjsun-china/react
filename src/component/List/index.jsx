@@ -8,13 +8,13 @@ export default class List extends Component {
     todos:PropTypes.array.isRequired,
   }
   render() {
-    const {todos,deleteTodo,changeTodoChecked} = this.props;
+    const {todos,deleteTodos,changeTodoChecked} = this.props;
     return (
       <div className='todo-List'>
           <ul>
             {
               todos.map((todo)=>{                 
-                return <Item item={todo} key={todo.id} changeTodoChecked = {changeTodoChecked} deleteTodo={deleteTodo}/>               
+                return <Item item={todo} key={todo.id} changeTodoChecked = {changeTodoChecked} deleteTodos={deleteTodos}/>               
               })
             }
           </ul>
