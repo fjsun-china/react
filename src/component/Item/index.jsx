@@ -26,16 +26,16 @@ export default class Item extends Component {
     }
   }
   deleteTodo = (id)=>{
-    const {deleteTodo} = this.props;
-    deleteTodo(id);
+    const {deleteTodos} = this.props;
+    deleteTodos(id);
   }
   render() {
     const {mouse} = this.state;
-    const {item,deleteTodo} = this.props;
+    const {item} = this.props;
     return (    
         <li style={{ backgroundColor: mouse? '#ddd': 'white'}} onMouseEnter = {this.handleMouseEnter()} onMouseLeave={this.handleMouseLeave()}>
             <label>
-              <input type="checkbox" defaultChecked={item.done} onChange = {this.handleChange(item.id)}></input>
+              <input type="checkbox" checked = {item.done} onChange = {this.handleChange(item.id)}></input>
               <span>{item.name}</span>
             </label>
             <button onClick={()=>this.deleteTodo(item.id)} style={{display:mouse?'block':'none'}}>删除</button>
