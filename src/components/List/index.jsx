@@ -1,9 +1,22 @@
 import React, { Component } from 'react'
+import pubhub from 'pubsub-js'
 import'./index.css'
 export default class List extends Component {
-	
+	state = {
+		users:[],
+		isLoading:false, //是否有loading
+		isFirst:true, //是否是第一次打开页面
+		err:''
+	};
+	//组件挂载时订阅消息
+	componentDidMount(){
+		pubhub.subscribe('github',(_,data)=>{
+			this.setState({...data})
+		})
+	}
 	render() {
-		const {users,isLoading,isFirst,err} = this.props;
+		const {users,isLoading,isFirst,err} = this.state;
+		console.log(this.state)
 		return (
 			<div className='row'>
 				{

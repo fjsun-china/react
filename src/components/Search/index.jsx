@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import pubhub from 'pubsub-js'
 import './index.css'
+
 export default class Search extends Component {
 	search = ()=>{
     //解构赋值并给value重命名
@@ -15,16 +17,20 @@ export default class Search extends Component {
 	// },(error)=>{
 	// 	console.log('失败'+error)
 	// })
-	const {updateAppState} = this.props;
-	updateAppState({isLoading:true,isFirst:false})
+	// const {updateAppState} = this.props;
+	// updateAppState({isLoading:true,isFirst:false})
+	pubhub.publish('github',{isLoading:true,isFirst:false})
 	axios({
 		method:'GET',
 		url:`/api1/search/users?q=${keyWord}`
 	}).then((response)=>{
-		updateAppState({isLoading:false,users:response.data.items})
+		//发布消息
+	pubhub.publish('github',{isLoading:false,users:response.data.items})
+		// updateAppState({isLoading:false,users:response.data.items})
 	},(error)=>{
 		console.log('失败'+error)
-		updateAppState({isLoading:false,err:error.message})
+		pubhub.publish('github',{isLoading:false,err:error.message})
+		// updateAppState({isLoading:false,err:error.message})
 	})
   }
   render() {
