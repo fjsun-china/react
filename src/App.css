@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,19 +35,28 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
 body {
   background: #fff;
 }
-
-.todo-wrap{
-  width: 506px;
-  margin: 0 auto;
+.container{
+  overflow: hidden;
+  margin-top: 0;
+  width: 320px;
+  height: 220px;
 }
 
-.todo-container{
-  width: 540px;
-  margin: 10px auto 0px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.daohang{
+  border: 1px solid green;
+  width: 100px;
+  height: 200px;
+  display: inline-block;
+  position: relative;
+}
+.zhanshi{
+  border: 1px solid green;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  position: relative;
 }
